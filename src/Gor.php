@@ -4,7 +4,7 @@ namespace EnricoDeLazzari\Gor;
 
 use InvalidArgumentException;
 
-class Gor
+final class Gor
 {
     public const MIN = -900;
 

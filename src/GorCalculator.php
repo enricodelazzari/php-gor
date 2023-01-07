@@ -2,7 +2,7 @@
 
 namespace EnricoDeLazzari\Gor;
 
-class GorCalculator
+final class GorCalculator
 {
     public function __construct(
         protected Gor|float $player,
@@ -19,7 +19,7 @@ class GorCalculator
         Gor|float $opponent,
         Result $result,
         Klass $klass
-    ) {
+    ): self {
         return new self(
             $player,
             $opponent,
@@ -52,7 +52,7 @@ class GorCalculator
 
     public function getCon(): float
     {
-        return pow((Gor::max()->diff($this->player)->value / 200), 1.6);
+        return (Gor::max()->diff($this->player)->value / 200) ** 1.6;
     }
 
     public function getBeta(Gor $gor): float
@@ -73,7 +73,7 @@ class GorCalculator
         return log(1 + exp((2300 - $this->player->value) / 80)) / 5;
     }
 
-    protected function calc(): float
+    private function calc(): float
     {
         return $this->getCon() * ($this->result->value() - $this->getSe()) + $this->getBonus();
     }

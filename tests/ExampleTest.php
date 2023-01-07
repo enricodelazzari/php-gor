@@ -5,7 +5,7 @@ use EnricoDeLazzari\Gor\GorCalculator;
 use EnricoDeLazzari\Gor\Klass;
 use EnricoDeLazzari\Gor\Result;
 
-it('can test', function ($klass, $player, $opponent, $result, $change) {
+it('can test', function ($klass, $player, $opponent, $result, $change): void {
     $calc = GorCalculator::for(
         player: $player,
         opponent: $opponent,
