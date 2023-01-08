@@ -11,4 +11,14 @@ enum Color: string
     {
         return $this === $color;
     }
+
+    public function isBlack(): bool
+    {
+        return $this->is(Color::BLACK);
+    }
+
+    public function isWhite(): bool
+    {
+        return $this->is(Color::WHITE);
+    }
 }

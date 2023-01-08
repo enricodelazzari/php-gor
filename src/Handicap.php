@@ -15,12 +15,8 @@ enum Handicap: int
     case EIGHT = 8;
     case NINE = 9;
 
-    public function gor(/*Color $color*/): Gor
+    public function gor(): Gor
     {
-        // if ($color->is(Color::WHITE)) {
-        //     return Gor::value(0);
-        // }
-
         return Gor::value(match ($this->value) {
             0 => 0,
             default => (100 * $this->value) - 50,
